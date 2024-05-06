@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video{
+    position: relative;// siempre el padre debe de ser relativo para que los hijos se muevan en la posicion del padre
+
+    .overlay{
+        position: absolute;
+        min-width: 50rem;
+        min-height: 70rem;
+        overflow: hidden;
+
+        background: linear-gradient(
+            270deg,
+            rgba(v.$morado, 60%),
+            rgba( darken(v.$morado,20% ), 90%)
+
+        );
+        inset: 0;
+        display: flex;
+        align-items: center;
+        
+    }
+
+    video{
+        display: block;
+        width: auto;
+        @include m.desktop{
+            width: 100%;
+        }
+        
+    }
+
+}
+
+.contenido-video{
+    z-index: 10; // puedo controlar que elemetno se puede mostrar dtras de otro 
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+    p{
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0;
+
+        
+    }
+}
