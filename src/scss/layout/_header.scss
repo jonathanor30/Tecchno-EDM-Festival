@@ -3,15 +3,24 @@
 
 .header {
     background-color: v.$verde;
-
+    @include m.tablet{
+        &.fixed{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333
+        }
     
-
+    }
+   
     .contenido-header {
         padding: 2rem;
         @include m.tablet{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
         }
        
     }
@@ -43,7 +52,8 @@
         color: v.$blanco;
         font-size: 2.4rem;
 
-        &:hover {
+        &:hover,
+        &.active {
             // este ampersan fucnion para que la a si quede pegada en el css cuando se compila
             color: v.$amarillo;
         }
